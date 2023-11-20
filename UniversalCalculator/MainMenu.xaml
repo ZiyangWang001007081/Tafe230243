@@ -1,0 +1,59 @@
+﻿<Page
+    x:Class="Calculator.MainMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Calculator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+	
+	<Page.Resources>
+		<!--Universal Style Setting of Buttons-->
+		<Style TargetType="Button">
+			<Setter Property="Background" Value="#33000000" />
+			<Setter Property="Foreground" Value="Black" />
+			<Setter Property="FontSize" Value="39" />
+			<Setter Property="FontStyle" Value="Normal" />
+			<Setter Property="Margin" Value="20" />
+			<Setter Property="Width" Value="420" />
+			<Setter Property="Height" Value="100" />
+		</Style>
+		<!--Universal Style Setting of TextBlocks-->
+		<Style TargetType="TextBlock">
+			<Setter Property="Foreground" Value="#FF001D7E" />
+			<Setter Property="FontSize" Value="70" />
+			<Setter Property="FontStyle" Value="Normal" />
+			<Setter Property="FontWeight" Value="Bold" />
+			<Setter Property="Margin" Value="10" />
+			<Setter Property="VerticalAlignment" Value="Center" />
+		</Style>
+		<!--Universal Style Setting of TextBoxes-->
+		<Style TargetType="TextBox">
+			<Setter Property="Background" Value="#66FFFFFF" />
+			<Setter Property="Foreground" Value="Black" />
+			<Setter Property="FontSize" Value="12" />
+			<Setter Property="FontStyle" Value="Normal" />
+			<Setter Property="Padding" Value="5" />
+			<Setter Property="Margin" Value="10" />
+			<Setter Property="MinWidth" Value="130" />
+			<Setter Property="Height" Value="Auto" />
+			<Setter Property="BorderBrush" Value="#66000000" />
+			<Setter Property="TextAlignment" Value="Left" />
+			<Setter Property="VerticalAlignment" Value="Center" />
+		</Style>
+	</Page.Resources>
+
+	<Grid x:Name="mainMenuForm" Background="#FFD5D8DC">
+		<StackPanel>
+			<TextBlock x:Name="mainTitleTextBlock" Text="Universal Calculator" HorizontalAlignment="Center" Margin="50"/>
+			<StackPanel HorizontalAlignment="Center">
+				<Button x:Name="mathCalculatorButton" Content="Math Calculator" Click="mathCalculatorButton_Click"/>
+				<Button x:Name="mortgageCalculatorButton" Content="Mortgage Calculator" Click="mortgageCalculatorButton_Click" />
+				<Button x:Name="currencyCalculatorButton" Content="Currency Calculator" Click="currencyCalculatorButton_Click" />
+				<Button x:Name="exitButton" Content="Exit" Click="exitButton_Click" />
+			</StackPanel>
+		</StackPanel>
+		<Image x:Name="abacusImage" Source="/Images/abacus.PNG" HorizontalAlignment="Right" VerticalAlignment="Top" Width="210" Margin="30"/>
+	</Grid>
+</Page>
