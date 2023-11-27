@@ -39,12 +39,11 @@ namespace Calculator
 		// Navigate to Mortgage Calculator Application
 		private void mortgageCalculatorButton_Click(object sender, RoutedEventArgs e)
 		{
-			/* Uncomment following code after created MortgageCalculator xaml page
-			 * if (this.Frame != null)
+	
+			if (this.Frame != null)
 			{
 				this.Frame.Navigate(typeof(MortgageCalculator));
 			}
-			*/
 		}
 
 		// Navigate to Currency Calculator Application
