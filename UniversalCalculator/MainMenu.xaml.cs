@@ -50,12 +50,11 @@ namespace Calculator
 		// Navigate to Currency Calculator Application
 		private void currencyCalculatorButton_Click(object sender, RoutedEventArgs e)
 		{
-			/* Uncomment following code after created CurrencyConverter xaml page
-			 * if (this.Frame != null)
+			// Uncomment following code after created CurrencyConverter xaml page
+			if (this.Frame != null)
 			{
 				this.Frame.Navigate(typeof(CurrencyConverter));
 			}
-			*/
 		}
 
 		// Exit the Application
