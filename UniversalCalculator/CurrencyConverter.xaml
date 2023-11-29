@@ -1,0 +1,101 @@
+﻿<Page
+    x:Class="Calculator.CurrencyConverter"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Calculator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+	<Page.Resources>
+		<!--Universal Style Setting of Buttons-->
+		<Style TargetType="Button">
+			<Setter Property="Background" Value="#33000000" />
+			<Setter Property="Foreground" Value="Black" />
+			<Setter Property="FontSize" Value="39" />
+			<Setter Property="FontStyle" Value="Normal" />
+			<Setter Property="Margin" Value="20" />
+			<Setter Property="Width" Value="420" />
+			<Setter Property="Height" Value="100" />
+		</Style>
+		<!--Universal Style Setting of TextBlocks-->
+		<Style TargetType="TextBlock">
+			<Setter Property="Foreground" Value="#FF001D7E" />
+			<Setter Property="FontSize" Value="70" />
+			<Setter Property="FontStyle" Value="Normal" />
+			<Setter Property="FontWeight" Value="Bold" />
+			<Setter Property="Margin" Value="10" />
+			<Setter Property="VerticalAlignment" Value="Center" />
+		</Style>
+		<!--Universal Style Setting of TextBoxes-->
+		<Style TargetType="TextBox">
+			<Setter Property="Background" Value="#66FFFFFF" />
+			<Setter Property="Foreground" Value="Black" />
+			<Setter Property="FontSize" Value="30" />
+			<Setter Property="FontStyle" Value="Normal" />
+			<Setter Property="Padding" Value="5" />
+			<Setter Property="Margin" Value="10" />
+			<Setter Property="MinWidth" Value="90" />
+			<Setter Property="Height" Value="60" />
+			<Setter Property="BorderBrush" Value="#66000000" />
+			<Setter Property="TextAlignment" Value="Left" />
+			<Setter Property="VerticalAlignment" Value="Center" />
+		</Style>
+		<!--Universal Style Setting of ComboBoxes-->
+		<Style TargetType="ComboBox">
+			<Setter Property="FontSize" Value="30"/>
+			<Setter Property="Width" Value="360"/>
+			<Setter Property="Height" Value="60"/>
+			<Setter Property="Margin" Value="10"/>
+		</Style>
+	</Page.Resources>
+
+	<Grid x:Name="currencyConverter" Background="#FFD5D8DC">
+		<StackPanel Margin="10">
+			<TextBlock x:Name="mainTitleTextBlock" Text="Currency Conversion Calculator" HorizontalAlignment="Center" Margin="50"/>
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+				<StackPanel>
+					<!--Contains a TextBlock/TextBox Pair for Currency Amount-->
+					<TextBlock Name="amountTextBlock" Text="Amount $" FontWeight="Normal" MinWidth="110"/>
+					<TextBox Name="amountTextBox" PlaceholderText="Enter amount" Width="360"/>
+				</StackPanel>
+				<StackPanel>
+					<!--Contains a TextBlock/ComboBox Pair for Currency user want convert From-->
+					<TextBlock Name="fromTextBlock" Text="From" FontWeight="Normal" MinWidth="110"/>
+					<ComboBox Name="fromComboBox" SelectedIndex="0" PlaceholderText="Choose a Currency">
+						<x:String>USD - US Dollar</x:String>
+						<x:String>EUR - Euro</x:String>
+						<x:String>GBP - British Pound</x:String>
+						<x:String>IDR - Indonesian Rupiah</x:String>
+					</ComboBox>
+				</StackPanel>
+				<StackPanel>
+					<!--Contains a TextBlock/ComboBox Pair for Currency user want convert To-->
+					<TextBlock Name="toTextBlock" Text="To" FontWeight="Normal" MinWidth="110"/>
+					<ComboBox Name="toComboBox" SelectedIndex="0" PlaceholderText="Choose a Currency">
+						<x:String>USD - US Dollar</x:String>
+						<x:String>EUR - Euro</x:String>
+						<x:String>GBP - British Pound</x:String>
+						<x:String>IDR - Indonesian Rupiah</x:String>
+					</ComboBox>
+				</StackPanel>
+			</StackPanel>
+			<StackPanel Margin="55, 0">
+				<!--This textblock will present user input amount (value from amountTextBox), first selected currency and equals mark. E.g. "1000 US Dollars = "-->
+				<TextBlock Name="originalCurrencyTextBlock" Text="" FontSize="30" FontWeight="Normal"/>
+				<!--This textblock will present conversion result acording to value selected in toComboBox. E.g. "$728.72436000 British Pounds"-->
+				<TextBlock Name="convertedCurrencyTextBlock" Text="" FontSize="55" FontWeight="Normal"/>
+				<!--This textblock will present conversion rate from user first selected currency to second selected currency. E.g. "1 US Dollar = 0.72872436 British Pounds"-->
+				<TextBlock Name="forwardCurrencyTextBlock" Text="" FontSize="30" FontWeight="Normal"/>
+				<!--This textblock will present conversion rate from user second selected currency to first selected currency. E.g. "1 British Pound = 1.371907 US Dollars"-->
+				<TextBlock Name="reversedCurrencyTextBlock" Text="" FontSize="30" FontWeight="Normal"/>
+			</StackPanel>
+			<StackPanel HorizontalAlignment="Center">
+				<!--Two Function buttons-->
+				<Button x:Name="currencyConversionButton" Content="Currency Conversion" Click="currencyConversionButton_Click"/>
+				<Button x:Name="exitButton" Content="Exit" Click="exitButton_Click"/>
+			</StackPanel>
+		</StackPanel>
+	</Grid>
+</Page>
