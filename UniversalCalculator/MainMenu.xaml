@@ -47,12 +47,13 @@
 	<Grid x:Name="mainMenuForm" Background="#FFD5D8DC">
 		<StackPanel>
 			<TextBlock x:Name="mainTitleTextBlock" Text="Universal Calculator" HorizontalAlignment="Center" Margin="50"/>
-			<StackPanel HorizontalAlignment="Center">
+			<StackPanel HorizontalAlignment="Center" Height="699">
 				<Button x:Name="mathCalculatorButton" Content="Math Calculator" Click="mathCalculatorButton_Click"/>
 				<Button x:Name="mortgageCalculatorButton" Content="Mortgage Calculator" Click="mortgageCalculatorButton_Click" />
 				<Button x:Name="currencyCalculatorButton" Content="Currency Calculator" Click="currencyCalculatorButton_Click" />
-				<Button x:Name="exitButton" Content="Exit" Click="exitButton_Click" />
-			</StackPanel>
+				<Button x:Name="tripCalculatorButton" Content="Trip Calculator" Click="tripCalculatorButton_Click" />
+                <Button x:Name="exitButton" Content="Exit" Click="exitButton_Click"/>
+            </StackPanel>
 		</StackPanel>
 		<Image x:Name="abacusImage" Source="/Images/abacus.PNG" HorizontalAlignment="Right" VerticalAlignment="Top" Width="210" Margin="30"/>
 	</Grid>
